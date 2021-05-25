@@ -97,19 +97,20 @@ public class Person {
 
     public void personInfo() {
         String str1, str2, str3;
-        if ("female".equals(getSex())) {
-            str1 = "She ";
-            str2 = " she is ";
-            str3 = "her ";
-        } else {
-            str1 = "He";
-            str2 = " he is ";
-            str3 = "his ";
-        }
+
         if (hasErrors > 0) {
             System.out.println("You have  " + hasErrors + " wrong inputs");
             System.out.println(errorMsg);
         } else {
+            if (getSex().equals("female")) {
+                str1 = "She ";
+                str2 = " she is ";
+                str3 = "her ";
+            } else {
+                str1 = "He";
+                str2 = " he is ";
+                str3 = "his ";
+            }
             System.out.println("Persons first name is " + getFirstName() + " and last name is " + getLastName()
                     + "." + "\n" + str1 + " is " + getAge() + " years old ," + str3 + " passport Id is  "
                     + getPassportId() + " and " + str2 + getSex() + ".\n ");
